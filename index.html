@@ -1,227 +1,837 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faris Mohamed | Data Analyst</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Faris Mohamed | Data Analyst Portfolio</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.7;
-        }
+<meta name="description" content="Faris Mohamed - MIS Graduate and Aspiring Data Analyst. Explore Excel dashboards, data analysis projects and technical skills.">
 
-        header {
-            background: #0f172a;
-            color: white;
-            padding: 22px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-        header h2 {
-            color: #38bdf8;
-        }
+:root {
+    --bg: #080f1d;
+    --surface: #101b2e;
+    --surface-light: #14233a;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --border: rgba(148,163,184,.15);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 22px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        .hero {
-            padding: 100px 8%;
-            background: #0f172a;
-            color: white;
-        }
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
 
-        .hero h1 {
-            font-size: 46px;
-            margin-bottom: 12px;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .hero h1 span {
-            color: #38bdf8;
-        }
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
 
-        .hero p {
-            max-width: 650px;
-            color: #cbd5e1;
-            font-size: 18px;
-        }
+/* NAVIGATION */
 
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 24px;
-            background: #38bdf8;
-            color: #0f172a;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(8,15,29,.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
 
-        section {
-            padding: 65px 8%;
-        }
+.nav-content {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        section h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #0f172a;
-        }
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
 
-        .about p {
-            max-width: 800px;
-            color: #475569;
-        }
+.logo span {
+    color: var(--accent);
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
 
-        .skills span {
-            background: white;
-            border: 1px solid #cbd5e1;
-            padding: 10px 18px;
-            border-radius: 6px;
-        }
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: .3s;
+}
 
-        .project-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 22px;
-            max-width: 750px;
-        }
+.nav-links a:hover {
+    color: var(--accent);
+}
 
-        .project-card img {
-            width: 100%;
-            border-radius: 7px;
-            margin: 18px 0;
-        }
+.nav-btn {
+    border: 1px solid var(--accent);
+    padding: 9px 19px;
+    border-radius: 8px;
+    color: var(--accent);
+    font-size: 14px;
+    transition: .3s;
+}
 
-        .project-card p {
-            color: #475569;
-        }
+.nav-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
 
-        footer {
-            background: #0f172a;
-            color: #cbd5e1;
-            text-align: center;
-            padding: 25px;
-        }
+/* HERO */
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 34px;
-            }
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
 
-            nav a {
-                margin-left: 0;
-                margin-right: 15px;
-            }
-        }
-    </style>
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--accent);
+    filter: blur(180px);
+    opacity: .12;
+    right: -100px;
+    top: 100px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(44px, 7vw, 76px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    color: #cbd5e1;
+    font-size: clamp(21px, 3vw, 29px);
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 610px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 25px;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--accent), var(--accent2));
+    color: #08111f;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(56,189,248,.2);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-4px);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 95px 0;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: rgba(56,189,248,.45);
+    transform: translateY(-5px);
+}
+
+.about-text {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.info-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 18px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item span:first-child {
+    color: var(--muted);
+}
+
+/* SKILLS */
+
+.skills-section {
+    background: #0b1424;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.skill-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.learning {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(129,140,248,.3);
+    background: rgba(129,140,248,.06);
+}
+
+.learning h3 {
+    margin-bottom: 15px;
+}
+
+.learning-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tag {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: #cbd5e1;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+/* PROJECTS */
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.project-image {
+    background: #101b2e;
+    padding: 18px;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+}
+
+.project-content {
+    padding: 30px;
+}
+
+.project-category {
+    color: var(--accent);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.project-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.project-content p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 750px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 20px 0 25px;
+}
+
+.project-tags span {
+    background: var(--surface-light);
+    color: #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat {
+    background: var(--surface-light);
+    padding: 17px;
+    border-radius: 10px;
+}
+
+.stat strong {
+    display: block;
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+}
+
+.stat small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* CONTACT */
+
+.contact-box {
+    text-align: center;
+    background: linear-gradient(120deg, #10233a, #151d39);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 65px 25px;
+}
+
+.contact-box h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: var(--accent);
+}
+
+/* ANIMATION */
+
+.reveal {
+    animation: appear .8s ease both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .about-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .project-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box h2 {
+        font-size: 29px;
+    }
+}
+
+@media(max-width: 430px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h2>Faris Mohamed</h2>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-        </nav>
-    </header>
+<nav>
+    <div class="container nav-content">
+        <a href="#" class="logo">FARIS<span>.</span></a>
 
-    <div class="hero">
-        <h1>Hi, I'm <span>Faris Mohamed</span></h1>
-        <h2>Aspiring Data Analyst</h2>
-        <p>
-            MIS Graduate interested in Data Analysis, Excel Reporting,
-            and transforming data into meaningful business insights.
-        </p>
-        <a href="#projects" class="button">View My Projects</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-btn">Let's Connect</a>
     </div>
+</nav>
 
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Management Information Systems graduate with experience
-            in operations coordination and Excel reporting.
-            I am developing my data analysis skills through practical
-            projects and continuous learning.
+<!-- HERO -->
+
+<header class="hero">
+    <div class="container hero-content reveal">
+
+        <div class="eyebrow">Welcome to my portfolio</div>
+
+        <h1>Hi, I'm <span>Faris Mohamed</span></h1>
+
+        <h2>Data Analyst | MIS Graduate</h2>
+
+        <p class="hero-description">
+            I turn data into meaningful insights that support
+            better business decisions. Passionate about data analysis,
+            Excel reporting, and business intelligence.
         </p>
-    </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills">
-            <span>Microsoft Excel</span>
-            <span>Pivot Tables</span>
-            <span>Pivot Charts</span>
-            <span>Excel Formulas</span>
-            <span>Data Cleaning</span>
-            <span>Data Visualization</span>
-        </div>
-        <h3 style="margin-top: 30px;">Currently Learning</h3>
-        <div class="skills" style="margin-top: 15px;">
-            <span>SQL</span>
-            <span>Python</span>
-            <span>Power BI</span>
-        </div>
-    </section>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
+            <a href="https://github.com/FaresMohamed18"
+               target="_blank" class="btn btn-outline">
+               GitHub Profile ↗
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Get to know me</div>
+            <h2>About Me</h2>
+            <p>A little about my background and professional interests.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <p class="about-text">
+                    I am a Management Information Systems graduate
+                    with experience in operations coordination and
+                    Excel reporting.
+
+                    <br><br>
+
+                    Through my work, I have developed practical
+                    experience in tracking operational performance,
+                    preparing reports, organizing data, and monitoring
+                    KPIs.
+
+                    <br><br>
+
+                    I am currently developing my data analysis skills
+                    through practical projects and continuous learning,
+                    with the goal of turning business data into
+                    actionable insights.
+                </p>
+            </div>
+
+            <div class="card info-card">
+                <h3>Quick Information</h3>
+
+                <div class="info-item">
+                    <span>Education</span>
+                    <strong>MIS Graduate</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Graduation</span>
+                    <strong>2024</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Focus</span>
+                    <strong>Data Analysis</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Primary Tool</span>
+                    <strong>Microsoft Excel</strong>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="skills-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">My capabilities</div>
+            <h2>Technical Skills</h2>
+            <p>Tools and techniques I use in my analytical work.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">▦</div>
+                <h3>Microsoft Excel</h3>
+                <p>
+                    Data analysis, formulas, Pivot Tables,
+                    Pivot Charts, reporting, and dashboards.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">▤</div>
+                <h3>Data Analysis</h3>
+                <p>
+                    Data cleaning, organizing information,
+                    KPI tracking, and business reporting.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">◫</div>
+                <h3>Data Visualization</h3>
+                <p>
+                    Creating clear dashboards and visual reports
+                    to communicate business insights.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="learning">
+            <h3>Currently Learning</h3>
+
+            <div class="learning-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Statistics</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">What I've been working on</div>
+            <h2>Featured Projects</h2>
+            <p>Practical projects demonstrating my analytical skills.</p>
+        </div>
 
         <div class="project-card">
-            <h3>Hotel Booking Analysis – Excel Dashboard</h3>
 
-            <img
+            <div class="project-image">
+                <img
                 src="https://raw.githubusercontent.com/FaresMohamed18/Hotel-Booking-Analysis/main/images/hotel-booking-dashboard.png"
-                alt="Hotel Booking Excel Dashboard"
-            >
+                alt="Hotel Booking Analysis Excel Dashboard">
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Excel Data Analysis
+                </div>
+
+                <h3>Hotel Booking Analysis Dashboard</h3>
+
+                <p>
+                    An interactive Excel dashboard analyzing hotel
+                    booking data to explore booking trends, revenue
+                    performance, and cancellation patterns across
+                    City and Resort hotels.
+                </p>
+
+                <div class="project-stats">
+
+                    <div class="stat">
+                        <strong>119,390</strong>
+                        <small>Total Bookings</small>
+                    </div>
+
+                    <div class="stat">
+                        <strong>$47.38M</strong>
+                        <small>Total Revenue</small>
+                    </div>
+
+                    <div class="stat">
+                        <strong>37.04%</strong>
+                        <small>Cancellation Rate</small>
+                    </div>
+
+                </div>
+
+                <div class="project-tags">
+                    <span>Microsoft Excel</span>
+                    <span>Pivot Tables</span>
+                    <span>Pivot Charts</span>
+                    <span>Data Cleaning</span>
+                    <span>Dashboard</span>
+                </div>
+
+                <a href="https://github.com/FaresMohamed18/Hotel-Booking-Analysis"
+                   target="_blank" class="btn btn-primary">
+                   View Project on GitHub ↗
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+    <div class="container">
+
+        <div class="contact-box">
+            <div class="section-label">Get in touch</div>
+
+            <h2>Let's Connect</h2>
 
             <p>
-                An Excel analysis project exploring hotel booking trends,
-                revenue performance, and cancellation patterns.
+                Interested in my work? Explore my projects
+                and connect with me on GitHub.
             </p>
 
-            <a
-                href="https://github.com/FaresMohamed18/Hotel-Booking-Analysis"
-                class="button"
-                target="_blank"
-            >
-                View Project on GitHub
+            <a href="https://github.com/FaresMohamed18"
+               target="_blank" class="btn btn-primary">
+               Visit My GitHub ↗
             </a>
         </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Faris Mohamed | Data Analyst Portfolio</p>
-        <p>
-            <a href="https://github.com/FaresMohamed18"
-               style="color: #38bdf8;">
-                GitHub Profile
-            </a>
-        </p>
-    </footer>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-content">
+
+        <p>© 2026 Faris Mohamed. All rights reserved.</p>
+
+        <a href="https://github.com/FaresMohamed18"
+           target="_blank">GitHub Profile ↗</a>
+
+    </div>
+</footer>
 
 </body>
 </html>
