@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faris Mohamed | Data Analyst</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+        }
+
+        .hero {
+            padding: 100px 8%;
+            background: #0f172a;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .about p {
+            max-width: 800px;
+            color: #475569;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills span {
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 22px;
+            max-width: 750px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 7px;
+            margin: 18px 0;
+        }
+
+        .project-card p {
+            color: #475569;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Faris Mohamed</h2>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Hi, I'm <span>Faris Mohamed</span></h1>
+        <h2>Aspiring Data Analyst</h2>
+        <p>
+            MIS Graduate interested in Data Analysis, Excel Reporting,
+            and transforming data into meaningful business insights.
+        </p>
+        <a href="#projects" class="button">View My Projects</a>
+    </div>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Management Information Systems graduate with experience
+            in operations coordination and Excel reporting.
+            I am developing my data analysis skills through practical
+            projects and continuous learning.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <span>Microsoft Excel</span>
+            <span>Pivot Tables</span>
+            <span>Pivot Charts</span>
+            <span>Excel Formulas</span>
+            <span>Data Cleaning</span>
+            <span>Data Visualization</span>
+        </div>
+        <h3 style="margin-top: 30px;">Currently Learning</h3>
+        <div class="skills" style="margin-top: 15px;">
+            <span>SQL</span>
+            <span>Python</span>
+            <span>Power BI</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+            <h3>Hotel Booking Analysis – Excel Dashboard</h3>
+
+            <img
+                src="https://raw.githubusercontent.com/FaresMohamed18/Hotel-Booking-Analysis/main/images/hotel-booking-dashboard.png"
+                alt="Hotel Booking Excel Dashboard"
+            >
+
+            <p>
+                An Excel analysis project exploring hotel booking trends,
+                revenue performance, and cancellation patterns.
+            </p>
+
+            <a
+                href="https://github.com/FaresMohamed18/Hotel-Booking-Analysis"
+                class="button"
+                target="_blank"
+            >
+                View Project on GitHub
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Faris Mohamed | Data Analyst Portfolio</p>
+        <p>
+            <a href="https://github.com/FaresMohamed18"
+               style="color: #38bdf8;">
+                GitHub Profile
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
